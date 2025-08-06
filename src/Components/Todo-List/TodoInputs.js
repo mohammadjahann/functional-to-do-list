@@ -16,12 +16,17 @@ export default function TodoInputs(props) {
         
     }
 
+    const selectChangeHandler = event => {
+        props.handleRenderSituation(event.target.value)
+        
+    } 
+
 
   return (
     <div className={styles.todoInputsContainer}>
         <button onClick={addBtnHandler} className={styles.todoaddbtn}>+</button>
         <input onChange={inputChangeHandler} value={inputValue} className={styles.todoInput} type="text"/>
-        <select className={styles.todoSelect} name="box" id="0">
+        <select onChange={selectChangeHandler} className={styles.todoSelect} name="box" id="0">
             <option value="all">All</option>
             <option value="uncomplete">UnComplete</option>
             <option value="completed">Completed</option>
