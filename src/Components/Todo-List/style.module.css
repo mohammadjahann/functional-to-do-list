@@ -1,0 +1,62 @@
+.todoBoxContianer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1280px;
+    min-height: 100vh;
+    margin: 40px auto;
+    padding: 40px 20px;
+    background-color: #5f9ea0; /* cadetblue */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .todoInputsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .todoInput {
+    width: 300px;
+    height: 40px;
+    padding: 0 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todoSelect {
+    width: 180px;
+    height: 40px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .todoaddbtn {
+    background-color: #ffe4c4; /* bisque */
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+    
+    transition: background-color 0.3s;
+  }
+  
+  .todoaddbtn:hover {
+    background-color: #ffd4a4;
+  }
