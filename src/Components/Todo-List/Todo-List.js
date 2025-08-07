@@ -24,12 +24,36 @@ export default function TodoList() {
         
     }
 
+    const removeHandler = id => {
+        setAlltodos(
+            alltodos.filter(todo=>{
+                return todo.id !== id
+            })
+        )
+        
+    }
+
+    const changeCompleteSituation = (id) => {
+        const updatedTodos = alltodos.map(todo => {
+          if (todo.id === id) {
+            return {
+              ...todo,
+              isDone: !todo.isDone
+            }
+          }
+          return todo
+        })
+      
+        setAlltodos(updatedTodos)
+      }
+      
+
   return (
     <div className={styles.todoBoxContianer}>
         <TodoInputs addTotoHandler={addTotoHandler} handleRenderSituation={handleRenderSituation}/>
         {alltodos.length > 0 && (
             alltodos.map(todo=>{
-                return <Todo key={todo.id} {...todo}/>
+                return <Todo key={todo.id} {...todo} removeHandler={removeHandler} changeCompleteSituation={changeCompleteSituation}/>
             })
         )}
     </div>
