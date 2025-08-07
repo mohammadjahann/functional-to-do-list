@@ -88,15 +88,29 @@
   
   .todo button {
     margin-left: 8px;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border: none;
     border-radius: 6px;
-    background-color: #eee;
-    cursor: pointer;
+    color: white;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
   }
   
-  .todo button:hover {
-    background-color: #ddd;
+  .todo button:first-of-type { /* Remove */
+    background-color: #e57373; /* soft red */
   }
+  
+  .todo button:first-of-type:hover {
+    background-color: #ef5350; /* deeper red */
+  }
+  
+  .todo button:last-of-type { /* Complete */
+    background-color: #81c784; /* soft green */
+  }
+  
+  .todo button:last-of-type:hover {
+    background-color: #66bb6a; /* deeper green */
+  }
+  

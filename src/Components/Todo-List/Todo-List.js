@@ -46,16 +46,36 @@ export default function TodoList() {
       
         setAlltodos(updatedTodos)
       }
+
+      const render = () => {
+        
+        if (rendering === 'all'){
+            return alltodos.map(todo=>{
+                return <Todo key={todo.id} {...todo} removeHandler={removeHandler} changeCompleteSituation={changeCompleteSituation}/>
+            })
+        } else if (rendering === 'uncomplete') {
+            let unCompleted = alltodos.filter(todo => {
+                return todo.isDone === false
+            })
+            return unCompleted.map(todo=>{
+                return <Todo key={todo.id} {...todo} removeHandler={removeHandler} changeCompleteSituation={changeCompleteSituation}/>
+            })
+        } else if (rendering === 'completed'){
+            let completed = alltodos.filter(todo=>{
+                return todo.isDone 
+            })
+            return completed.map(todo=>{
+                return <Todo key={todo.id} {...todo} removeHandler={removeHandler} changeCompleteSituation={changeCompleteSituation}/>
+            })
+        }
+      }
       
 
   return (
     <div className={styles.todoBoxContianer}>
         <TodoInputs addTotoHandler={addTotoHandler} handleRenderSituation={handleRenderSituation}/>
-        {alltodos.length > 0 && (
-            alltodos.map(todo=>{
-                return <Todo key={todo.id} {...todo} removeHandler={removeHandler} changeCompleteSituation={changeCompleteSituation}/>
-            })
-        )}
+        {alltodos.length > 0 && render()}
+            
     </div>
   )
 }
